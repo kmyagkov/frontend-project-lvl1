@@ -5,4 +5,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
-https://asciinema.org/a/3gPmjEA6fcl5UlB6qgDImfPuC
+Brain-even: https://asciinema.org/a/3gPmjEA6fcl5UlB6qgDImfPuC
+
+Brain-calc: https://asciinema.org/a/fFVP1lPzdXGKvNFpuydjRcocD
