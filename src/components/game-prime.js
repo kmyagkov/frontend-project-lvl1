@@ -1,4 +1,4 @@
-import { createGame } from './create-game.js';
+import createGame from './create-game.js';
 import { getRandomInt } from '../utils.js';
 
 const POSITIVE_ANSWER = 'yes';
@@ -20,9 +20,7 @@ const questionsGenerator = () => {
   return { question, correctAnswer };
 };
 
-const checkAnswer = (userAnswer, correctAnswer) => {
-  return VALID_ANSWERS.includes(userAnswer) && correctAnswer === userAnswer;
-};
+const checkAnswer = (user, valid) => VALID_ANSWERS.includes(user) && valid === user;
 
 const gameConfig = {
   rules: 'Answer "yes" if given number is prime. Otherwise answer "no".',
@@ -30,6 +28,6 @@ const gameConfig = {
   checkAnswer,
 };
 
-export const gamePrime = () => {
+export default () => {
   createGame(gameConfig);
 };

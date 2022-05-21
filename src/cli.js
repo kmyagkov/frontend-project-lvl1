@@ -1,4 +1,4 @@
-import { greeting } from './components/greeting.js';
+import greeting from './components/greeting.js';
 
 export default () => {
   greeting();

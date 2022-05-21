@@ -1,4 +1,4 @@
-import { createGame } from './create-game.js';
+import createGame from './create-game.js';
 import { getRandomInt } from '../utils.js';
 
 const getProgression = (firstEl, step, count) => {
@@ -17,8 +17,7 @@ const hideRandomEl = (arr) => {
   const index = getRandomInt(0, arr.length - 1);
   const el = arr[index];
 
-  arr[index] = '..';
-  return el;
+  return [el, [...arr.slice(0, index), '..', ...arr.slice(index + 1)]];
 };
 
 const questionsGenerator = () => {
@@ -26,17 +25,15 @@ const questionsGenerator = () => {
   const step = getRandomInt(1, 10);
   const count = getRandomInt(5, 10);
   const progression = getProgression(firstEl, step, count);
-  const hiddenEl = hideRandomEl(progression);
+  const [hiddenEl, progressionHidden] = hideRandomEl(progression);
 
-  const question = progression.join(' ');
+  const question = progressionHidden.join(' ');
   const correctAnswer = hiddenEl;
 
   return { question, correctAnswer };
 };
 
-const checkAnswer = (userAnswer, correctAnswer) => {
-  return Number.isInteger(+userAnswer) && +correctAnswer === +userAnswer;
-};
+const checkAnswer = (user, valid) => Number.isInteger(+user) && +valid === +user;
 
 const gameConfig = {
   rules: 'What number is missing in the progression?',
@@ -44,6 +41,6 @@ const gameConfig = {
   checkAnswer,
 };
 
-export const gameProgression = () => {
+export default () => {
   createGame(gameConfig);
 };

@@ -1,4 +1,4 @@
-import { createGame } from './create-game.js';
+import createGame from './create-game.js';
 import { getRandomInt } from '../utils.js';
 
 const getNOD = (x, y) => {
@@ -21,9 +21,7 @@ const questionsGenerator = () => {
   return { question, correctAnswer };
 };
 
-const checkAnswer = (userAnswer, correctAnswer) => {
-  return Number.isInteger(+userAnswer) && +correctAnswer === +userAnswer;
-};
+const checkAnswer = (user, valid) => Number.isInteger(+user) && +valid === +user;
 
 const gameConfig = {
   rules: 'Find the greatest common divisor of given numbers.',
@@ -31,6 +29,6 @@ const gameConfig = {
   checkAnswer,
 };
 
-export const gameGCD = () => {
+export default () => {
   createGame(gameConfig);
 };

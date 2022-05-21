@@ -1,4 +1,4 @@
-import { createGame } from './create-game.js';
+import createGame from './create-game.js';
 import { getRandomInt, isEven } from '../utils.js';
 
 const POSITIVE_ANSWER = 'yes';
@@ -12,9 +12,7 @@ const questionsGenerator = () => {
   return { question, correctAnswer };
 };
 
-const checkAnswer = (userAnswer, correctAnswer) => {
-  return VALID_ANSWERS.includes(userAnswer) && correctAnswer === userAnswer;
-};
+const checkAnswer = (user, valid) => VALID_ANSWERS.includes(user) && valid === user;
 
 const gameConfig = {
   rules: 'Answer "yes" if the number is even, otherwise answer "no".',
@@ -22,6 +20,6 @@ const gameConfig = {
   checkAnswer,
 };
 
-export const gameEven = () => {
+export default () => {
   createGame(gameConfig);
 };

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greeting } from './greeting.js';
+import greeting from './greeting.js';
 
 const printWinMessage = (userName) => {
   console.log(`Congratulations, ${userName}!`);
@@ -10,7 +10,7 @@ const printFailMessage = (userName, userAnswer, correctAnswer) => {
   console.log(`Let's try again, ${userName}!`);
 };
 
-export const createGame = ({
+export default ({
   lvlCount = 3,
   rules, questionsGenerator,
   checkAnswer,

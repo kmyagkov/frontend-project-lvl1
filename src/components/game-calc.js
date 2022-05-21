@@ -1,4 +1,4 @@
-import { createGame } from './create-game.js';
+import createGame from './create-game.js';
 import { getRandomInt } from '../utils.js';
 
 const MATH_OPERATIONS = [
@@ -33,9 +33,7 @@ const questionsGenerator = () => {
   return { question, correctAnswer };
 };
 
-const checkAnswer = (userAnswer, correctAnswer) => {
-  return Number.isInteger(+userAnswer) && +correctAnswer === +userAnswer;
-};
+const checkAnswer = (user, valid) => Number.isInteger(+user) && +valid === +user;
 
 const gameConfig = {
   rules: 'What is the result of the expression?',
@@ -43,6 +41,6 @@ const gameConfig = {
   checkAnswer,
 };
 
-export const gameCalc = () => {
+export default () => {
   createGame(gameConfig);
 };
