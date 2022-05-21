@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import cli from '../src/cli.js';
+import { gameEven } from '../src/components/game-even.js';
 
-cli();
+gameEven();

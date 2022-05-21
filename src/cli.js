@@ -1,5 +1,5 @@
-import { gameEven } from './components/game-even.js';
+import { greeting } from './components/greeting.js';
 
 export default () => {
-  gameEven();
+  greeting();
 };
